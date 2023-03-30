@@ -20,4 +20,4 @@
 
 - name: import systemd-setup
   ansible.builtin.import_tasks:
-    file: schema-setup.yml
+    file: systemd-setup.yml

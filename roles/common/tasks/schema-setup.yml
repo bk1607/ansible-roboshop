@@ -1,5 +1,5 @@
-- name: installing database and loading schema
-  when: schema_type == 'mongo'
+- name: installing mongodb
+  when: schema_type == "mongo"
   block:
     - name: copying mongodb repo files
       ansible.builtin.copy:
@@ -11,8 +11,8 @@
         state: installed
     - name: loading schema
       ansible.builtin.shell: mongo --host mongodb-dev.devops2023.online </app/schema/{{ component }}.js
-
-  when: schema_type == 'mysql'
+- name: mysql schema
+  when: schema_type == "mysql"
   block:
     - name: installing mysql
       ansible.builtin.yum:
