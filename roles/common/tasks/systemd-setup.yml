@@ -1,6 +1,6 @@
 - name: copying systemd files
   ansible.builtin.copy:
-    src: {{ component }}.service
+    src: "{{ component }}.service"
     dest: /etc/systemd/system/{{ component }}.service
 
 - name: enable and restart service
