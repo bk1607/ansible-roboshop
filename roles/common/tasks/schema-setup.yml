@@ -10,7 +10,7 @@
         name: mongodb-org-shell
         state: installed
     - name: loading schema
-      ansible.builtin.shell: mongo --host mongodb-dev.devops2023.online </app/schema/{{ component }}.js
+      ansible.builtin.shell: mongo --host 52.87.220.40 </app/schema/{{ component }}.js
 - name: mysql schema
   when: schema_type == "mysql"
   block:
