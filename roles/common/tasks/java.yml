@@ -1,7 +1,7 @@
 - name: Install maven
   ansible.builtin.yum:
     name: maven
-    installed: yes
+    state: installed
 
 - name: app-setup
   ansible.builtin.import_tasks:
