@@ -1,7 +1,7 @@
 - name: installing mongodb
   when: schema_type == "mongo"
   block:
-    - name: copying mongodb repo files
+    - name: copying mongodb repo templates
       ansible.builtin.copy:
         src: mongodb.repo
         dest: /etc/yum.repos.d/mongodb.repo
