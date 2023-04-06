@@ -1,10 +1,11 @@
-- name: Disable mysql
-  ansible.builtin.shell: dnf module disable mysql -y
 
 - name: copying repo templates
   ansible.builtin.copy:
     src: mysql.repo
     dest: /etc/yum.repos.d/mysql.repo
+
+- name: Disable mysql
+  ansible.builtin.shell: dnf module disable mysql -y
 
 - name: installing mysql
   ansible.builtin.yum:
@@ -14,8 +15,8 @@
 - name: enable and restart database
   ansible.builtin.systemd:
     name: mysqld
+    state: started
     enabled: yes
-    state: restarted
 
 - name: setup password
   ansible.builtin.shell: mysql_secure_installation --set-root-pass {{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.mysql_pass', region='us-east-1') }}
