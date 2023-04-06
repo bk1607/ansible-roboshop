@@ -1,4 +1,3 @@
-
 - name: copying repo templates
   ansible.builtin.copy:
     src: mysql.repo
