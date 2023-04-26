@@ -6,7 +6,7 @@ groups:
 
   - alert: "Service down for {{ component }} component"
     expr: node_systemd_unit_state{exported_name="{{component}}.service",state="active"}
-    for: 10s
+    for: 1m
     labels:
       severity: critical
     annotations:
