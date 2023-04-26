@@ -6,7 +6,7 @@
 - name: update alert configuration file
   ansible.builtin.template:
     src: "{{ item }}"
-    dest: /opt/prometheus/"{{ item }}"
+    dest: /opt/prometheus/{{ item }}
   loop: "{{ alert_files }}"
 
 - name: restart prometheus
