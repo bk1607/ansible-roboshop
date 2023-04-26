@@ -2,13 +2,13 @@ groups:
 - name: Roboshop
   rules:
 
-  { % for component in components % }
+{% for component in components %}
 
-  - alert: "Service down for {{ item }} component"
-    expr: node_systemd_unit_state{exported_name="cart.service",state="active"}
+  - alert: "Service down for {{ component }} component"
+    expr: node_systemd_unit_state{exported_name="{{component}}.service",state="active"}
     for: 10s
     labels:
       severity: critical
     annotations:
       summary: service down
-  {% endfor %}
+{% endfor %}
