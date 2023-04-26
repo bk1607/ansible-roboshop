@@ -3,7 +3,7 @@
     src: prometheus.yml
     dest: /opt/prometheus/prometheus.yml
 
-- name: update configuration file
+- name: update alert configuration file
   ansible.builtin.template:
     src: alerts.yml
     dest: /opt/prometheus/alerts.yml
