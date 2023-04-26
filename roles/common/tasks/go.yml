@@ -8,7 +8,7 @@
     file: app-setup.yml
 
 - name: download dependencies
-  ansible.builtin.shell: go mod init dispatch; go get; go build
+  ansible.builtin.shell: cd /app; go mod init dispatch; go get; go build
 
 - name: import systemd-setup
   ansible.builtin.import_tasks:
