@@ -2,6 +2,6 @@ components:
   - frontend
   - payment
 
-alerts:
+alert_files:
   - alerts.yml
   - service_down_alerts.yml
