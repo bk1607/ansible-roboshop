@@ -8,7 +8,7 @@
     src: "{{ item }}"
     dest: /opt/prometheus/"{{ item }}"
   loop:
-    - alerts
+    - "{{ alerts }}"
 
 - name: restart prometheus
   ansible.builtin.systemd:
