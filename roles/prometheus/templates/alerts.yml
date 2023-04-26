@@ -1,0 +1,12 @@
+groups:
+- name: Roboshop
+  rules:
+
+  # Alert for any instance that is unreachable for >5 minutes.
+  - alert: Server down
+    expr: up < 1
+    for: 30s
+    labels:
+      severity: critical
+    annotations:
+      summary: sever down
