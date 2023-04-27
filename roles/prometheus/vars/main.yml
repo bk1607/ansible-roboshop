@@ -1,7 +1,11 @@
 components:
-  - frontend
-  - payment
-
+  - {'name': 'frontend', service: 'nginx'}
+  - {'name': 'payment', service: 'payment'}
+  - {'name': 'catalogue', 'service': 'catalogue'}
+  - {'name': 'dispatch', 'service': 'dispatch'}
+  - {'name': 'cart', 'service': 'cart'}
+  - {'name': 'shipping', 'service': 'shipping'}
+  - {name: 'user', 'service': 'user'}
 alert_files:
   - alerts.yml
   - service_down_alert.yml

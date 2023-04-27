@@ -4,8 +4,8 @@ groups:
 
 {% for component in components %}
 
-  - alert: "Service down for {{ component }} component"
-    expr: node_systemd_unit_state{exported_name="{{component}}.service",state="active"} < 1
+  - alert: "Service down for {{ component.name }} component"
+    expr: node_systemd_unit_state{exported_name="{{component.service}}.service",state="active"} < 1
     for: 1m
     labels:
       severity: critical
